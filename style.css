@@ -3,7 +3,7 @@
 }
 
 .container .square {
-    width: 50px;
+    width: 100vw;
     height: 50px;
     border: 2px solid black;
 }
