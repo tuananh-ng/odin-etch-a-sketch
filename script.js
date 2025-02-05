@@ -1,4 +1,5 @@
 createGrid();
+
 const squares = document.querySelectorAll(".square");
 squares.forEach((square) => {
     square.addEventListener("mouseover", () => {
@@ -9,6 +10,9 @@ squares.forEach((square) => {
         square.style.backgroundColor = "red";
     })
 });
+
+const askingButton = document.querySelector("#ask");
+askingButton.addEventListener("click", askForGridSize);
 
 function createGrid() {
     let numRow = 16;
@@ -29,4 +33,16 @@ function createRow() {
         square.classList.toggle("square");
         row.appendChild(square);
     }
+}
+
+function askForGridSize() {
+    let size = prompt("Enter a grid size (1-100):");
+    if (!(Number.isInteger(size))) {
+        return;
+    }
+    if(size < 1 || size > 100) {
+        return;
+    }
+
+    return size;
 }
