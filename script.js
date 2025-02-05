@@ -1,4 +1,14 @@
 createGrid();
+const squares = document.querySelectorAll(".square");
+squares.forEach((square) => {
+    square.addEventListener("mouseover", () => {
+        square.style.backgroundColor = "blue";
+    });
+
+    square.addEventListener("mouseout", () => {
+        square.style.backgroundColor = "red";
+    })
+});
 
 function createRow() {
     const space = document.querySelector("#canvas");
