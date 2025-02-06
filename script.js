@@ -36,14 +36,13 @@ function paintWithRandomColor() {
     const squares = document.querySelectorAll(".square");
     squares.forEach((square) => {
         square.addEventListener("mouseover", () => {
-            square.style.backgroundColor = generateRandomBackgroundColorValue();
-        })
+            square.style.backgroundColor = `rgb(
+                ${Math.floor(Math.random() * 256)},
+                ${Math.floor(Math.random() * 256)},
+                ${Math.floor(Math.random() * 256)}
+            )`;
+        });
     });
-
-    function generateRandomBackgroundColorValue() {
-        randValue = Math.floor(Math.random() * 1000000);
-        return `#${randValue}`;
-    }
 }
 
 function askForGridSize() {
