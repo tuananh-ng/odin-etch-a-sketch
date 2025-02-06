@@ -1,6 +1,6 @@
 const defaultSize = 16;
 createGrid(defaultSize);
-addHoveringEffect();
+paintWithRandomColor();
 
 const askingButton = document.querySelector("#ask");
 askingButton.addEventListener("click", () => {
@@ -32,17 +32,18 @@ function createRow(numSquares) {
     }
 }
 
-function addHoveringEffect() {
+function paintWithRandomColor() {
     const squares = document.querySelectorAll(".square");
     squares.forEach((square) => {
         square.addEventListener("mouseover", () => {
-            square.style.backgroundColor = "blue";
-        });
-
-        square.addEventListener("mouseout", () => {
-            square.style.backgroundColor = "red";
+            square.style.backgroundColor = generateRandomBackgroundColorValue();
         })
     });
+
+    function generateRandomBackgroundColorValue() {
+        randValue = Math.floor(Math.random() * 1000000);
+        return `#${randValue}`;
+    }
 }
 
 function askForGridSize() {
@@ -70,5 +71,5 @@ function changeGrid(size) {
     body.appendChild(newSpace);
     
     createGrid(size);
-    addHoveringEffect();
+    paintWithRandomColor();
 }
