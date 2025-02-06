@@ -47,12 +47,6 @@ function addHoveringEffect() {
 
 function askForGridSize() {
     let size = +prompt("Enter a grid size (1-100):");
-    if (!(Number.isInteger(size))) {
-        return;
-    }
-    if(size < 1 || size > 100) {
-        return;
-    }
 
     return size;
 }
